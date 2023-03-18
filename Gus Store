@@ -1,0 +1,21 @@
+-create a store database
+CREATE TABLE gus (id INTEGER PRIMARY KEY, name TEXT, size TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO gus VALUES(1,"Leash","S", 10, 29.99);
+INSERT INTO gus VALUES(2,"Leash","M",15,29.99);
+INSERT INTO gus VALUES(3,"Leash","L",10,29.99);
+INSERT INTO gus VALUES(4,"Leash","XL",10,29.99);
+INSERT INTO gus VALUES(5,"Collar","S",10,19.99);
+INSERT INTO gus VALUES(6,"Collar","M",15,19.99);
+INSERT INTO gus VALUES(7,"Collar","L",10,19.99);
+INSERT INTO gus VALUES(8,"Collar","XL",10,19.99);
+INSERT INTO gus VALUES(9,"Ball","-",15,6.99);
+INSERT INTO gus VALUES(10,"Turkey treat","-",20,12.99);
+INSERT INTO gus VALUES(11,"wipes","-",25,9.99);
+INSERT INTO gus VALUES(12,"cupcake surprise","-",5,2.99);
+INSERT INTO gus VALUES(13,"toothpaste","-",8,4.99);
+INSERT INTO gus VALUES(14,"sqeaky toy","-",11,12.99);
+INSERT INTO gus VALUES(15,"bed","-",6,89.99);
+
+-Display database based on quantity and ordered by price of each item
+SELECT * FROM gus WHERE quantity >10 ORDER BY price;
