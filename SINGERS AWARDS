@@ -1,0 +1,52 @@
+/* Create table about the people and what they do here */
+CREATE TABLE singers (id INTEGER PRIMARY KEY, 
+    full_name TEXT,
+    songs TEXT,
+    hometown TEXT);
+    
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES ("ariana grande", "positions", "houston");
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES ("taylor swift", "illicit affairs", "nashville");
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES ("beyonce", "partition", "houston");
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES ("kacey musgraves", "good wife", "austin");
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES ("harry styles", "falling", "great britian"); 
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES ("mariah carey", "honey", "new jersey");
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES ("madonna", "vogue", "NYC");
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES ("janet jackson", "if", "chicago");
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES("michael jackson", "thriller", "chicago");
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES("rihanna", "needed me", "chicago");
+INSERT INTO singers (full_name, songs, hometown)
+    VALUES("cher", "turn back time", "nashville");
+
+CREATE TABLE awards (id INTEGER PRIMARY KEY,
+    awarded_song TEXT,
+    award TEXT,
+    year INTEGER);
+    
+INSERT INTO awards (awarded_song, award, year)
+    VALUES ("turn back time", "grammy", "1999");
+INSERT INTO awards (awarded_song, award, year)
+    VALUES ("needed me", "peoples choice", "2014");
+INSERT INTO awards (awarded_song, award, year)
+    VALUES ("thriller", "grammy", "1989");
+INSERT INTO awards (awarded_song, award, year)
+    VALUES ("if", "teen choice", " 1992");
+INSERT INTO awards (awarded_song, award, year)
+    VALUES ("honey", "grammy", "1996");
+INSERT INTO awards (awarded_song, award, year)
+    VALUES ("falling", "grammy", "2019");
+
+/* outer join*/
+SELECT s.full_name, s.songs, a.award, a.year
+    FROM singers s
+    LEFT OUTER JOIN awards a
+    ON s.songs=a.awarded_song;
