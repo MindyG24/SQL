@@ -1,0 +1,9 @@
+Find the average safetyrating for each street and label any that are above a 4 rating as "Leave As-Is", and <2.5 rating should be labeled as "remove".
+
+SELECT street, safetyrating,
+AVG(safetyrating) OVER (PARTITION BY street) as "average_safety_rating",
+CASE WHEN AVG(safetyrating) OVER (PARTITION BY street) >=4 THEN "Leave As-Is"
+    WHEN AVG(safetyrating) OVER (PARTITION BY street) <2.5 THEN "Remove"
+    ELSE "Improvements Neeeded"
+    END AS "Recommendations"
+FROM CityBikeLanes
